@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/adamcaron/api_curious.svg?label=ready&title=Ready)](http://waffle.io/adamcaron/api_curious)
+
 # API-Curious
 
 This a project for the Turing School of Software & Design. This project's goal is to consume and work with data from a public API.
