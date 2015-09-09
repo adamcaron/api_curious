@@ -1,0 +1,58 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-bio h2 {
+  color: #4b4f54;
+  font-size: 17px;
+  font-weight: 550;
+  display: inline-block;
+}
+
+.profile-bio {
+
+}
+
+.profile-username {
+  margin: 0;
+  font-size: 34px;
+  color: #4b4f54;
+  font-weight: 300;
+  display: inline-block;
+}
+
+.profile-author-info {
+  width: 80%;
+  color: #4b4f54;
+}
+
+.profile-avatar img {
+  height: 152px;
+  margin-bottom: -7px;
+  margin-top: -7px;
+  width: 152px;
+}
+
+.profile-avatar {
+  float: left;
+  margin-right: 30px;
+}
+
+.profile-header {
+  margin-bottom: 45px;
+  padding: 20px 0;
+}
+
+.profile {
+  min-height: 100%;
+  padding: 0 20px;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 935px;
+}
+
+.profile-nav {
+  margin: 0 auto;
+  padding: 26px 0;
+  max-width: 935px;
+}
