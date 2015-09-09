@@ -18,11 +18,10 @@
   width: 91%;
 }
 
-//= depend_on_asset "core-sprites-175663.png"
 .coreSpriteHeartOpen {
   background-size: 219px 216px;
   background-position: -97px -82px;
-  background-image: url(core-sprites-175663.png);
+  background-image: image-url("core-sprites-175663.png");
   background-repeat: no-repeat;
   height: 44px;
   width: 44px;
