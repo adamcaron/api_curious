@@ -1,7 +1,7 @@
 <nav>
   <div class="home-nav">
     <%= link_to "Api-Curious", root_path %>
-    <%= link_to "#{current_user.nickname}", logout_path, class: "menu-item" %>
+    <%= link_to "#{current_user.nickname}", profile_path(current_user.nickname), class: "menu-item" %>
   </div>
 </nav>
 <main>
