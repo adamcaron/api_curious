@@ -1,3 +1,118 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-post-comment-creator input {
+  color: #A6A8AB;
+  margin-top: 10px;
+  font-size: 15px;
+  padding: 1px 0;
+  height: 18px;
+  width: 91%;
+  border: 0;
+  display: inline-block;
+}
+
+.home-post-comment-creator {
+  float: right;
+  width: 91%;
+}
+
+.coreSpriteHeartOpen {
+  background-size: 219px 216px;
+  background-position: -97px -82px;
+  background-image: url(core-sprites-175663.png);
+  background-repeat: no-repeat;
+  height: 44px;
+  width: 44px;
+}
+
+.home-post-likebutton {
+  margin: 0 0 0 -9px;
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.feedback {
+  padding-top: 10px;
+  min-height: 58px;
+  border-top: 1px solid #eeefef;
+  margin-top: 13px;
+}
+
+.comment {
+  margin-bottom: 7px;
+}
+
+.comments {
+  list-style-type: none;
+  padding: 0 24px;
+  margin: 0 -24px 7px -24px;
+  width: 100%;
+}
+
+.home-past-likes{
+  margin: 20px 0 7px 0;
+}
+
+.home-post-info {
+  padding: 0 24px;
+}
+
+.home-post-photo {
+  background-color: #ddd;
+  border-top: 1px solid #edeeee;
+  border-bottom: 1px solid #edeeee;
+  width: 100%;
+  height: 600px;
+}
+
+.home-post-timestamp, .home-post-timestamp:visited, .home-post-timestamp:active {
+  float: right;
+  font-size: 15px;
+  color: #a5a7aa;
+}
+
+.home-post-timestamp:hover {
+  color: #818488;
+}
+
+.home-post-owner-user-link {
+  margin-right: 100%;
+}
+
+.home-post-owner-and-location {
+  display: inline-block;
+}
+
+.home-post-owner-avatar {
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.home-post header {
+  padding: 14px 20px;
+}
+
+.home-post {
+  border: 1px solid #edeeee;
+  background-color: white;
+  width: 560px;
+}
+
+.home-feed {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.home-nav {
+  margin: 0 auto;
+  padding: 26px 0;
+  max-width: 600px;
+}
