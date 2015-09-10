@@ -85,15 +85,28 @@
   color: #818488;
 }
 
+.home-post-location-link:hover {
+  color: #20486d;
+}
+
+.home-post-location-link, .home-post-location-link:visited {
+  color: #4090db;
+}
+
 .home-post-owner-user-link {
   margin-right: 100%;
 }
 
 .home-post-owner-and-location {
+  line-height: 18px;
+  height: 34px;
+  font-size: 15px;
   display: inline-block;
 }
 
 .home-post-owner-avatar {
+  margin: -1px 6px -1px -5px;
+  border: 1px solid #cccfd0;
   box-sizing: border-box;
   height: 30px;
   width: 30px;
@@ -105,6 +118,7 @@
 }
 
 .home-post {
+  border-radius: 3px;
   margin-bottom: 60px;
   border: 1px solid #edeeee;
   background-color: white;
