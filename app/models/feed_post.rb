@@ -28,8 +28,7 @@ class FeedPost
     @likes             = post_data[:likes][:count]
     @caption           = {
                           username: post_data[:caption][:from][:username],
-                          text:     post_data[:caption][:text]
-                        } unless post_data[:caption].nil?
+                          text:     post_data[:caption][:text] } unless post_data[:caption].nil?
     @comments          = post_data[:comments][:data].map { |comment| PostComment.new(comment) }
   end
 end
