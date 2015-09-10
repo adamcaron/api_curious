@@ -4,8 +4,10 @@ class FeedPost < OpenStruct
   end
 
   def self.all(user)
-    response = service.feed(user.token)
-    response["data"].map { |post| FeedPost.new(post) }
+    unless user.nil?
+      response = service.feed(user.token)
+      response["data"].map { |post| FeedPost.new(post) }
+    end
   end
 
   attr_reader :image_url

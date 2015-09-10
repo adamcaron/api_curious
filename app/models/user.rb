@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   def self.find_or_create_from_auth(data)
-    @user = User.find_or_create_by(provider: data.provider, uid: data.uid)
+    user = User.find_or_create_by(provider: data.provider, uid: data.uid)
 
     user.nickname = data.info.nickname
     user.name     = data.info.name
