@@ -22,15 +22,24 @@
           </div>
           <%= link_to "1h", "#", class: "home-post-timestamp" %>
         </header>
+
         <div class="home-post-photo">
           <%= image_tag post.image_url %>
         </div>
+
         <div class="home-post-info">
+
           <section class="home-post-likes">
-            <span>3,849 likes</span>
+            <span><%= post.likes %> likes</span>
           </section>
 
           <ul class="comments">
+            <% unless post.caption.nil? %>
+              <li class="comment">
+                <%= link_to post.caption[:username], "#", class: "comment-userlink" %>
+                <span><%= post.caption[:text] %></span>
+              </li>
+            <% end %>
             <% post.comments.each do |comment| %>
               <li class="comment">
                 <%= link_to comment.username, "#", class: "comment-userlink" %>
@@ -45,6 +54,7 @@
               <input type="text" value="Add a comment...">
             </form>
           </section>
+
         </div>
       </article>
 
