@@ -11,10 +11,14 @@
 
       <article class="home-post">
         <header>
-          <%= image_tag "", class: "home-post-owner-avatar" %>
+          <%= image_tag post.owner_profile_pic, class: "home-post-owner-avatar" %>
           <div class="home-post-owner-and-location">
-            <%= link_to "Ownername", "#", class: "home-post-owner-user-link" %>
-            <%= link_to "Location", "#", class: "home-post-location-link" %>
+            <%= link_to post.username, "#", class: "home-post-owner-user-link" %>
+            <% if post.location.nil? %>
+              <a href="" class="home-post-location-link">iPhone</a>
+            <% else %>
+              <%= link_to post.location, "#", class: "home-post-location-link" %>
+            <% end %>
           </div>
           <%= link_to "1h", "#", class: "home-post-timestamp" %>
         </header>
