@@ -28,5 +28,6 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov'
   gem 'awesome_print'
+  gem 'rspec-rails'
 end
 
