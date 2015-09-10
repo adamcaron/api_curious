@@ -10,10 +10,12 @@ class FeedPost < OpenStruct
     end
   end
 
-  attr_reader :image_url
+  attr_reader :image_url, :id, :comments
 
-  def initialize(post_info)
-    @image_url = post_info["images"]["standard_resolution"]["url"]
+  def initialize(post_data)
+    @id        = post_data["id"]
+    @image_url = post_data["images"]["standard_resolution"]["url"]
+    @comments  = post_data["comments"]["data"].map { |comment| PostComment.new(comment) }
   end
 end
 
