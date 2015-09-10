@@ -12,6 +12,6 @@ class InstagramService
   private
 
   def parse(response)
-    JSON.parse(response.body)
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
