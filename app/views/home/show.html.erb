@@ -25,16 +25,16 @@
           <section class="home-post-likes">
             <span>3,849 likes</span>
           </section>
+
           <ul class="comments">
-            <li class="comment">
-              <%= link_to "username4", "#", class: "comment-userlink" %>
-              <span>OMG the best comment everrrrr.</span>
-            </li>
-            <li class="comment">
-              <%= link_to "username4", "#", class: "comment-userlink" %>
-              <span>OMG the best comment everrrrr.</span>
-            </li>
+            <% post.comments.each do |comment| %>
+              <li class="comment">
+                <%= link_to comment.username, "#", class: "comment-userlink" %>
+                <span><%= comment.text %></span>
+              </li>
+            <% end %>
           </ul>
+
           <section class="feedback">
             <%= link_to "", "#", class: "home-post-likebutton coreSpriteHeartOpen hide-text" %>
             <form class="home-post-comment-creator">
