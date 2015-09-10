@@ -6,39 +6,45 @@
 </nav>
 <main>
   <section class="home-feed">
-    <article class="home-post">
-      <header>
-        <%= image_tag "", class: "home-post-owner-avatar" %>
-        <div class="home-post-owner-and-location">
-          <%= link_to "Ownername", "#", class: "home-post-owner-user-link" %>
-          <%= link_to "Location", "#", class: "home-post-location-link" %>
+
+    <% @feed_posts.each do |post| %>
+
+      <article class="home-post">
+        <header>
+          <%= image_tag "", class: "home-post-owner-avatar" %>
+          <div class="home-post-owner-and-location">
+            <%= link_to "Ownername", "#", class: "home-post-owner-user-link" %>
+            <%= link_to "Location", "#", class: "home-post-location-link" %>
+          </div>
+          <%= link_to "1h", "#", class: "home-post-timestamp" %>
+        </header>
+        <div class="home-post-photo">
+          <%= image_tag post.image_url %>
         </div>
-        <%= link_to "1h", "#", class: "home-post-timestamp" %>
-      </header>
-      <div class="home-post-photo">
-        <%= image_tag "" %>
-      </div>
-      <div class="home-post-info">
-        <section class="home-post-likes">
-          <span>3,849 likes</span>
-        </section>
-        <ul class="comments">
-          <li class="comment">
-            <%= link_to "username4", "#", class: "comment-userlink" %>
-            <span>OMG the best comment everrrrr.</span>
-          </li>
-          <li class="comment">
-            <%= link_to "username4", "#", class: "comment-userlink" %>
-            <span>OMG the best comment everrrrr.</span>
-          </li>
-        </ul>
-        <section class="feedback">
-          <%= link_to "", "#", class: "home-post-likebutton coreSpriteHeartOpen hide-text" %>
-          <form class="home-post-comment-creator">
-            <input type="text" value="Add a comment...">
-          </form>
-        </section>
-      </div>
-    </article>
+        <div class="home-post-info">
+          <section class="home-post-likes">
+            <span>3,849 likes</span>
+          </section>
+          <ul class="comments">
+            <li class="comment">
+              <%= link_to "username4", "#", class: "comment-userlink" %>
+              <span>OMG the best comment everrrrr.</span>
+            </li>
+            <li class="comment">
+              <%= link_to "username4", "#", class: "comment-userlink" %>
+              <span>OMG the best comment everrrrr.</span>
+            </li>
+          </ul>
+          <section class="feedback">
+            <%= link_to "", "#", class: "home-post-likebutton coreSpriteHeartOpen hide-text" %>
+            <form class="home-post-comment-creator">
+              <input type="text" value="Add a comment...">
+            </form>
+          </section>
+        </div>
+      </article>
+
+    <% end %>
+
   </section>
 </main>
