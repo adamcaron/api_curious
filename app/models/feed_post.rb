@@ -33,6 +33,3 @@ class FeedPost
     @comments          = post_data[:comments][:data].map { |comment| PostComment.new(comment) }
   end
 end
-
-# Caption Username ___________
-# r["data"].first["caption"]["from"]["username"]
