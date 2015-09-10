@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
@@ -14,4 +17,5 @@ class ActiveSupport::TestCase
     config.cassette_library_dir = "test/cassettes"
     config.hook_into :webmock # after VCR records the response, stub the info
   end
+
 end
