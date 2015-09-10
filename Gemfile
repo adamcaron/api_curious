@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth-instagram', '~> 1.0.1'
 gem 'figaro'
 gem 'rails_12factor', group: :production
+gem 'hurley'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -26,5 +27,6 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry'
   gem 'simplecov'
+  gem 'awesome_print'
 end
 
