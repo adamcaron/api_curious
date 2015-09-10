@@ -1,6 +1,6 @@
 require "./test/test_helper"
 
-class SunlightServiceTest < ActiveSupport::TestCase
+class InstagramServiceTest < ActiveSupport::TestCase
   attr_reader :service
 
   def setup
