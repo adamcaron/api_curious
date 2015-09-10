@@ -18,4 +18,15 @@ class ActiveSupport::TestCase
     config.hook_into :webmock # after VCR records the response, stub the info
   end
 
+  def create_user!
+    user = User.create!( name: "Adam",
+                        image: "http://asdf.com",
+                          bio: "asdf",
+                      website: "whatever.com",
+                        token: Figaro.env.APP_OWNER_IG_TOKEN,
+                     provider: "Instagram",
+                          uid: "10")
+    user
+  end
+
 end
