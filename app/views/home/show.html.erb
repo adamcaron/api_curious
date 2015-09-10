@@ -14,7 +14,9 @@
           <%= image_tag post.owner_profile_pic, class: "home-post-owner-avatar" %>
           <div class="home-post-owner-and-location">
             <%= link_to post.username, "#", class: "home-post-owner-user-link" %>
-            <% unless post.location.nil? %>
+            <% if post.location.nil? %>
+              <a href="" class="home-post-location-link">iPhone</a>
+            <% else %>
               <%= link_to post.location, "#", class: "home-post-location-link" %>
             <% end %>
           </div>

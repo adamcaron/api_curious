@@ -114,10 +114,12 @@
 }
 
 .home-post header {
+  height: 36px;
   padding: 14px 20px;
 }
 
 .home-post {
+  position: relative;
   border-radius: 3px;
   margin-bottom: 60px;
   border: 1px solid #edeeee;
