@@ -19,14 +19,4 @@ class SunlightServiceTest < ActiveSupport::TestCase
       assert post.keys.include?(:tags)
     end
   end
-
-  # test "#committees" do
-  #   VCR.use_cassette('sunlight_service_test#committees') do
-  #     committees = service.committees(chamber: "senate")
-  #     committee  = committees.first
-
-  #     assert_equal 20,      committees.count
-  #     assert_equal 'Regulatory Affairs and Federal Management', committee[:name]
-  #   end
-  # end
 end
