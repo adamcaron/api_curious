@@ -5,7 +5,6 @@ class FeedPostTest < ActiveSupport::TestCase
 
   def setup
     @user = create_user!
-    # @service ||= FeedPost.service
   end
 
   test "has access to service" do
