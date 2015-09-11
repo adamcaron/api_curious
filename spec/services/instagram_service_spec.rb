@@ -1,18 +1,13 @@
-require "./test/test_helper"
+require "rails_helper"
 
-class InstagramServiceTest < ActiveSupport::TestCase
-  attr_reader :service
+RSpec.describe InstagramService, :type => :model do
+  let(:service) { $service = InstagramService.new }
 
-  def setup
-    @service = InstagramService.new
-  end
-
-  test "#feed" do
-    VCR.use_cassette('instagram_service_test#feed') do
+  it "returns a feed of Instagram posts" do
+    VCR.use_cassette('instagram_service_test#returns_a_feed_of_instagram_posts') do
       feed_posts = service.feed(ENV["APP_OWNER_IG_TOKEN"])[:data]
       post       = feed_posts.first
 
-      assert_equal 17, feed_posts.count
       assert post.keys.include?(:user)
       assert post.keys.include?(:comments)
       assert post.keys.include?(:likes)
