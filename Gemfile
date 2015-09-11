@@ -28,11 +28,12 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov'
   gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
 end
 
 group :test do
   gem 'vcr'
   gem 'webmock'
-  gem 'database_cleaner', '~> 1.5.0'
 end
 

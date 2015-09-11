@@ -8,10 +8,14 @@ require 'minitest/pride'
 require 'capybara/rails'
 require 'webmock'
 require 'vcr'
+require 'database_cleaner'
 
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
 end
+
+DatabaseCleaner.strategy = :transaction
+DatabaseCleaner.start
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
