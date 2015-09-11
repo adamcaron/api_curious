@@ -4,7 +4,7 @@ class UserLogsInWithInstagramTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   test "logs in" do
-    VCR.use_cassette('user_login_test#login') do
+    VCR.use_cassette('user_logs_in_with_instagram_test#logs_in') do
       visit root_path
       assert_equal 200, page.status_code
       refute page.has_content?("adamcaron_")
