@@ -5,6 +5,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/pride'
+require 'capybara/rails'
 require 'webmock'
 require 'vcr'
 
@@ -30,7 +31,9 @@ class ActiveSupport::TestCase
   end
 
   def stub_oauth_data!
-    OmniAuth::AuthHash.new(
+    OmniAuth.config.test_mode = true
+
+    OmniAuth.config.mock_auth[:instagram] = OmniAuth::AuthHash.new(
       {
         "provider"    => "instagram",
         "uid"         => "1644186282",
