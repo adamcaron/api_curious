@@ -2,7 +2,7 @@ require './test/test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test "user is found or created by oauth data" do
-    @data = OmniAuth::AuthHash.new(
+    @oauth_response = OmniAuth::AuthHash.new(
       {
         "provider"    => "instagram",
         "uid"         => "1644186282",
@@ -21,7 +21,7 @@ class UserTest < ActiveSupport::TestCase
       }
     )
 
-    user = User.find_or_create_from_auth(@data)
+    user = User.find_or_create_from_auth(@oauth_response)
 
     assert_equal "1644186282", user.uid
     assert_equal "instagram",  user.provider
