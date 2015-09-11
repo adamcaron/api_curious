@@ -1,23 +1,20 @@
-require './test/test_helper'
+require "rails_helper"
 
-class FeedPostTest < ActiveSupport::TestCase
-  attr_reader :user
+RSpec.describe FeedPost, :type => :model do
 
-  def setup
-    @user = create_user!
-  end
+  let(:user) { $user = create_user! }
 
-  test "has access to service" do
+  it "has access to the Instagram service" do
     service = FeedPost.service
 
-    assert_equal InstagramService, service.class
+    expect(service.class).to eq(InstagramService)
   end
 
-  test "returns all the posts for a user's feed" do
-    VCR.use_cassette('feed_post_test#all') do
+  it "returns all the posts for a user's feed" do
+    VCR.use_cassette('feed_post#returns_all_posts') do
       feed_posts = FeedPost.all(user)
 
-      assert_equal FeedPost, feed_posts.last.class
+      expect(FeedPost).to eq(feed_posts.last.class)
     end
   end
 end
