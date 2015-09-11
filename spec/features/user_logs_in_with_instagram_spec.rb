@@ -1,20 +1,18 @@
-require './test/test_helper'
+require "rails_helper"
 
-class UserLogsInWithInstagramTest < ActionDispatch::IntegrationTest
-  include Capybara::DSL
-
-  test "logs in" do
-    VCR.use_cassette('user_logs_in_with_instagram_test#logs_in') do
+RSpec.feature "User", type: :feature do
+  scenario "logs in with Instagram" do
+    VCR.use_cassette("user_logs_in_with_instagram") do
       visit root_path
-      assert_equal 200, page.status_code
-      refute page.has_content?("adamcaron_")
+      expect(status_code).to be(200)
+      expect(page).to have_no_content("adamcaron_")
 
-      stub_user_data!
+      login_user!
       click_link "Log In"
 
-      assert_equal "/", current_path
-      refute page.has_content?("Login")
-      assert page.has_content?("adamcaron_")
+      expect(current_path).to eq(root_path)
+      expect(page).to have_no_content("Login")
+      expect(page).to have_content("adamcaron_")
     end
   end
 end

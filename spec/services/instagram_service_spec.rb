@@ -12,7 +12,6 @@ class InstagramServiceTest < ActiveSupport::TestCase
       feed_posts = service.feed(ENV["APP_OWNER_IG_TOKEN"])[:data]
       post       = feed_posts.first
 
-      assert_equal 17, feed_posts.count
       assert post.keys.include?(:user)
       assert post.keys.include?(:comments)
       assert post.keys.include?(:likes)

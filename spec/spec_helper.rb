@@ -5,7 +5,7 @@ require 'webmock'
 require 'vcr'
 
 VCR.configure do |config|
-  config.cassette_library_dir = "test/cassettes"
+  config.cassette_library_dir = "spec/cassettes"
   config.hook_into :webmock # after VCR records the response, stub the info
 end
 
@@ -34,7 +34,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  def stub_user_data!
+  def login_user!
     OmniAuth.config.test_mode = true
 
     OmniAuth.config.mock_auth[:instagram] = OmniAuth::AuthHash.new(
