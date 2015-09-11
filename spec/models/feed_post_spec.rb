@@ -11,7 +11,7 @@ RSpec.describe FeedPost, :type => :model do
   end
 
   it "returns all the posts for a user's feed" do
-    VCR.use_cassette('feed_post#returns_all_posts') do
+    VCR.use_cassette('feed_post_test#returns_all_posts') do
       feed_posts = FeedPost.all(user)
 
       expect(FeedPost).to eq(feed_posts.last.class)

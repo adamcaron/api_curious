@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.feature "User", type: :feature do
-  scenario "sees link to profile on homepage" do
-    VCR.use_cassette("user_sees_link_to_profile_on_homepage") do
+RSpec.feature "User sees profile", type: :feature do
+  scenario "navigates to profile from homepage link" do
+    VCR.use_cassette("user_sees_profile_test#navigates_to_profile_from_homepage_link") do
       visit root_path
       login_user!
       click_link "Log In"

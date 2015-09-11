@@ -1,8 +1,9 @@
-require './test/test_helper'
+require "rails_helper"
 
-class UserTest < ActiveSupport::TestCase
-  test "user is found or created by oauth data" do
-    @oauth_response = OmniAuth::AuthHash.new(
+RSpec.describe User, :type => :model do
+
+  let(:oauth_response) {
+    $oauth_response = OmniAuth::AuthHash.new(
       {
         "provider"    => "instagram",
         "uid"         => "1644186282",
@@ -20,11 +21,13 @@ class UserTest < ActiveSupport::TestCase
         "extra"       => {}
       }
     )
+  }
 
-    user = User.find_or_create_from_auth(@oauth_response)
+  it "is found or created by oauth data" do
+    user = User.find_or_create_from_auth(oauth_response)
 
-    assert_equal "1644186282", user.uid
-    assert_equal "instagram",  user.provider
-    assert_equal "adamcaron_", user.nickname
+    expect(user.uid).to eq("1644186282")
+    expect(user.provider).to eq("instagram")
+    expect(user.nickname).to eq("adamcaron_")
   end
 end

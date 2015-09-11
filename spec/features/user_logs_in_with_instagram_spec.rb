@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.feature "User", type: :feature do
-  scenario "logs in with Instagram" do
-    VCR.use_cassette("user_logs_in_with_instagram") do
+RSpec.feature "User logs in", type: :feature do
+  scenario "successfully authenticates with Instagram" do
+    VCR.use_cassette("user_logs_in_test#successfully_authenticates_with_ig") do
       visit root_path
       expect(status_code).to be(200)
       expect(page).to have_no_content("adamcaron_")
