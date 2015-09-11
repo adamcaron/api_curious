@@ -9,7 +9,7 @@ class UserLogsInWithInstagramTest < ActionDispatch::IntegrationTest
       assert_equal 200, page.status_code
       refute page.has_content?("adamcaron_")
 
-      stub_oauth_data!
+      stub_user_data!
       click_link "Log In"
 
       assert_equal "/", current_path

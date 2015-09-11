@@ -9,6 +9,10 @@ require 'capybara/rails'
 require 'webmock'
 require 'vcr'
 
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+end
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
@@ -19,18 +23,7 @@ class ActiveSupport::TestCase
     config.hook_into :webmock # after VCR records the response, stub the info
   end
 
-  def create_user!
-    user = User.create!( name: "Adam",
-                        image: "http://asdf.com",
-                          bio: "asdf",
-                      website: "whatever.com",
-                        token: Figaro.env.APP_OWNER_IG_TOKEN,
-                     provider: "Instagram",
-                          uid: "10")
-    user
-  end
-
-  def stub_oauth_data!
+  def stub_user_data!
     OmniAuth.config.test_mode = true
 
     OmniAuth.config.mock_auth[:instagram] = OmniAuth::AuthHash.new(
@@ -53,4 +46,14 @@ class ActiveSupport::TestCase
     )
   end
 
+  def create_user!
+    user = User.create!( name: "Adam",
+                        image: "http://asdf.com",
+                          bio: "asdf",
+                      website: "whatever.com",
+                        token: Figaro.env.APP_OWNER_IG_TOKEN,
+                     provider: "Instagram",
+                          uid: "10")
+    user
+  end
 end
